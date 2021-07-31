@@ -19,12 +19,12 @@ char	*ft_itoa(int n)
 	char		*string;
 
 	number = n;
+	places = (number <= 0);
 	while (n)
 	{
 		n /= 10;
 		places++;
 	}
-	places += (number <= 0);
 	string = (char *) ft_calloc(places + 1, sizeof(char));
 	if (number == 0)
 		string[0] = '0';
