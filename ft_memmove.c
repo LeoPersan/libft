@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:36:43 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:36:43 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/07/31 21:14:34 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*src_c;
 	unsigned char	*dest_c;
 
+	if (!dest && !src)
+		return (NULL);
 	i = -1;
 	src_c = (unsigned char *) src;
 	dest_c = (unsigned char *) dest;
