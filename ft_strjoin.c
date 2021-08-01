@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:51:33 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/30 21:51:33 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:37:22 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	s3 = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!s3)
+		return (NULL);
 	while (*s1)
 		s3[i++] = *(s1++);
 	while (*s2)

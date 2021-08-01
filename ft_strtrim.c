@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:51:33 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/30 21:51:33 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:48:29 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	char	*s2;
 	int		start;
 	int		length;
 
@@ -40,10 +38,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (!set[i])
 			break;
 	}
-	s2 = (char *)malloc((length + 2) * sizeof(char));
-	i = -1;
-	while (++i <= length)
-		s2[i] = s1[start + i];
-	s2[i] = 0;
-	return (s2);
+	return (ft_substr(s1, start, length + 1));
 }
