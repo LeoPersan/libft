@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:37:07 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:37:07 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:23:56 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	i = 0;
-	if (size--)
+	if (!src || !dst)
+		return (0);
+	i = -1;
+	while (src[++i])
 	{
-		while (src[i] && i < size)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = 0;
+		if (i + 1 < size)
+			*(dst++) = src[i];
 	}
-	while (src[i])
-		i++;
+	if (size > 0)
+		*dst = 0;
 	return (i);
 }
