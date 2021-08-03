@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 19:46:27 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/31 19:46:27 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/01 19:34:08 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void    ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		write(fd, "-", 1);
         if (n == -2147483648)
         {
-            ft_putchar_fd('2', fd);
+            write(fd, "2", 1);
             n = -147483648;
         }
 		ft_putnbr_fd(n * -1, fd);
