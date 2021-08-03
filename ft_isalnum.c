@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:32:38 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:32:38 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/01 19:13:34 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	return ((c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122)
+		|| (c >= 48 && c <= 57));
 }
