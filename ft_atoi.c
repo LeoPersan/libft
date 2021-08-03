@@ -17,8 +17,7 @@ int	ft_atoi(const char *str)
 	long int		number;
 	unsigned int	negative;
 
-	while (*str == '\t' || *str == '\n' || *str == '\v'
-		|| *str == '\f' || *str == '\r' || *str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	negative = (*str == '-');
 	if (*str == '-' || *str == '+')
