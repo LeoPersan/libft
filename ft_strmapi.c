@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 19:19:51 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/31 19:19:51 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/04 20:42:42 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*s2;
 
+	if (!s)
+		return (NULL);
 	s2 = (char *) malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!s2)
 		return (NULL);

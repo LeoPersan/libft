@@ -6,17 +6,19 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:50:12 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 15:36:29 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/04 20:46:08 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*s1;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	if (start > i)
 		len = 0;
