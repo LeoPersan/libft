@@ -6,13 +6,13 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 18:07:56 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 15:42:45 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/04 20:34:10 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_count_decimal_places(long int number)
+static size_t	ft_count_decimal_places(long int number)
 {
 	size_t	places;
 
@@ -22,7 +22,7 @@ static size_t ft_count_decimal_places(long int number)
 		number /= 10;
 		places++;
 	}
-	return places;
+	return (places);
 }
 
 char	*ft_itoa(int n)
