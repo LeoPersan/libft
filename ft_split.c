@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:51:33 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 19:52:48 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ char	**ft_split(char const *string, char delimiter)
 		if (!strings[word])
 			return (ft_clean_matrix((void **)strings));
 		ft_strlcpy(strings[word], (string + i), (word_size + 1));
-		i += word_size;
 		i += ft_count_until((string + i + word_size), delimiter, 1);
+		i += word_size;
 	}
 	return (strings);
 }
