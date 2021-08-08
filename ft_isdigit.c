@@ -6,13 +6,13 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:32:10 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 19:14:12 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:32:55 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isdigit(int character)
 {
-	return (c >= 48 && c <= 57);
+	return (character >= 48 && character <= 57);
 }

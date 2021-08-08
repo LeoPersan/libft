@@ -6,29 +6,29 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:41:01 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:41:01 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:51:02 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *string)
 {
 	int	tmp;
 	int	signal;
 	int	number;
 
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
+	while ((*string >= 9 && *string <= 13) || *string == ' ')
+		string++;
 	signal = 1;
-	if (*str == '-')
+	if (*string == '-')
 		signal = -1;
-	if (*str == '-' || *str == '+')
-		str++;
+	if (*string == '-' || *string == '+')
+		string++;
 	number = 0;
-	while (*str >= '0' && *str <= '9')
+	while (*string >= '0' && *string <= '9')
 	{
-		tmp = (*(str++) - '0') * signal;
+		tmp = (*(string++) - '0') * signal;
 		if (signal == 1 && number > 214748364 && tmp > 7)
 			return (-1);
 		if (signal == -1 && number < -214748364 && tmp < -8)

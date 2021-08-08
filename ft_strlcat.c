@@ -6,33 +6,33 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:37:26 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:37:26 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+t_size	ft_strlcat(char *destitation, const char *source, t_size quantity)
 {
-	size_t	d;
-	size_t	s;
+	t_size	d;
+	t_size	s;
 
 	d = 0;
 	s = 0;
-	while (dst[d])
+	while (destitation[d])
 		d++;
-	if (d < size)
+	if (d < quantity)
 	{
-		while (src[s] && d + s < size - 1)
+		while (source[s] && d + s < quantity - 1)
 		{
-			dst[d + s] = src[s];
+			destitation[d + s] = source[s];
 			s++;
 		}
-		dst[d + s] = 0;
+		destitation[d + s] = 0;
 	}
-	while (src[s])
+	while (source[s])
 		s++;
-	if (d > size)
-		return (size + s);
+	if (d > quantity)
+		return (quantity + s);
 	return (d + s);
 }

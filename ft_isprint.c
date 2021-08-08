@@ -6,13 +6,13 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:33:46 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 19:14:19 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:33:14 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_isprint(int character)
 {
-	return (c >= 32 && c <= 126);
+	return (character >= 32 && character <= 126);
 }

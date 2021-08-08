@@ -6,23 +6,23 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:37:07 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/03 12:54:46 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_size	ft_strlcpy(char *destitation, const char *source, t_size quantity)
 {
-	size_t	i;
+	t_size	i;
 
-	if (!src || !dst)
+	if (!source || !destitation)
 		return (0);
 	i = -1;
-	while (src[++i])
-		if (i + 1 < size)
-			*(dst++) = src[i];
-	if (size > 0)
-		*dst = 0;
+	while (source[++i])
+		if (i + 1 < quantity)
+			*(destitation++) = source[i];
+	if (quantity > 0)
+		*destitation = 0;
 	return (i);
 }

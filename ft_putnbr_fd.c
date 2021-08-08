@@ -6,29 +6,29 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 19:46:27 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/04 20:30:03 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 11:02:07 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int number, int file_descriptor)
 {
-	if (n < 0)
+	if (number < 0)
 	{
-		write(fd, "-", 1);
-		if (n == -2147483648)
+		write(file_descriptor, "-", 1);
+		if (number == -2147483648)
 		{
-			write(fd, "2", 1);
-			n = -147483648;
+			write(file_descriptor, "2", 1);
+			number = -147483648;
 		}
-		ft_putnbr_fd(n * -1, fd);
+		ft_putnbr_fd(number * -1, file_descriptor);
 	}
-	else if (n > 9)
+	else if (number > 9)
 	{
-		ft_putnbr_fd((n / 10), fd);
-		ft_putchar_fd((n % 10) + '0', fd);
+		ft_putnbr_fd((number / 10), file_descriptor);
+		ft_putchar_fd((number % 10) + '0', file_descriptor);
 	}
 	else
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd(number + '0', file_descriptor);
 }

@@ -6,24 +6,24 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:36:43 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/31 21:14:34 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *destitation, const void *source, t_size quantity)
 {
-	size_t			i;
+	t_size	i;
 
-	if (!dest && !src)
+	if (!destitation && !source)
 		return (NULL);
 	i = -1;
-	if (dest < src)
-		while (++i < n)
-			((unsigned char *) dest)[i] = ((unsigned char *) src)[i];
+	if (destitation < source)
+		while (++i < quantity)
+			((char *) destitation)[i] = ((char *) source)[i];
 	else
-		while (n--)
-			((unsigned char *) dest)[n] = ((unsigned char *) src)[n];
-	return (dest);
+		while (quantity--)
+			((char *) destitation)[quantity] = ((char *) source)[quantity];
+	return (destitation);
 }

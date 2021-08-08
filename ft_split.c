@@ -6,15 +6,15 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:51:33 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/31 18:02:57 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_until(char const *str, char end, unsigned int equal)
+static t_size	ft_count_until(char const *str, char end, unsigned int equal)
 {
-	size_t	qty;
+	t_size	qty;
 
 	qty = -1;
 	while (str[++qty])
@@ -24,10 +24,10 @@ static size_t	ft_count_until(char const *str, char end, unsigned int equal)
 	return (qty);
 }
 
-static size_t	ft_count_words(char const *str, char delimiter)
+static t_size	ft_count_words(char const *str, char delimiter)
 {
-	size_t	i;
-	size_t	words;
+	t_size	i;
+	t_size	words;
 
 	words = 0;
 	i = ft_count_until(str, delimiter, 1);
@@ -42,7 +42,7 @@ static size_t	ft_count_words(char const *str, char delimiter)
 
 static void	*ft_clean_matrix(void **matrix)
 {
-	size_t	i;
+	t_size	i;
 
 	i = -1;
 	while (matrix[++i])
@@ -51,7 +51,7 @@ static void	*ft_clean_matrix(void **matrix)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *string, char delimiter)
 {
 	int		i;
 	int		word;
@@ -59,22 +59,23 @@ char	**ft_split(char const *s, char c)
 	int		word_size;
 	char	**strings;
 
-	if (!s)
+	if (!string)
 		return (NULL);
-	words = ft_count_words(s, c);
+	words = ft_count_words(string, delimiter);
 	strings = (char **) ft_calloc((words + 1), sizeof(char *));
 	if (!strings)
 		return (NULL);
-	i = ft_count_until(s, c, 1);
+	i = ft_count_until(string, delimiter, 1);
 	word = -1;
 	while (++word < words)
 	{
-		word_size = ft_count_until((s + i), c, 0);
+		word_size = ft_count_until((string + i), delimiter, 0);
 		strings[word] = (char *) malloc(sizeof(char) * (word_size + 1));
 		if (!strings[word])
 			return (ft_clean_matrix((void **)strings));
-		ft_strlcpy(strings[word], (s + i), (word_size + 1));
-		i += word_size + ft_count_until((s + i + word_size), c, 1);
+		ft_strlcpy(strings[word], (string + i), (word_size + 1));
+		i += word_size;
+		i += ft_count_until((string + i + word_size), delimiter, 1);
 	}
 	return (strings);
 }

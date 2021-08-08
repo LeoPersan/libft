@@ -6,15 +6,15 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 18:07:56 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/04 20:34:10 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:59:49 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_decimal_places(long int number)
+static t_size	ft_count_decimal_places(long int number)
 {
-	size_t	places;
+	t_size	places;
 
 	places = (number <= 0);
 	while (number)
@@ -25,13 +25,13 @@ static size_t	ft_count_decimal_places(long int number)
 	return (places);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int number)
 {
-	long int	number;
-	int			places;
-	char		*string;
+	int		signal;
+	int		places;
+	char	*string;
 
-	number = n;
+	signal = 1;
 	places = ft_count_decimal_places(number);
 	string = (char *) ft_calloc(places + 1, sizeof(char));
 	if (!string)
@@ -41,11 +41,11 @@ char	*ft_itoa(int n)
 	else if (number < 0)
 	{
 		string[0] = '-';
-		number *= -1;
+		signal *= -1;
 	}
 	while (number)
 	{
-		string[--places] = (number % 10) + '0';
+		string[--places] = (number % 10) * signal + '0';
 		number /= 10;
 	}
 	return (string);

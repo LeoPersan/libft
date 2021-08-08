@@ -6,13 +6,13 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 19:35:34 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/04 20:30:59 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 11:01:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char character, int file_descriptor)
 {
-	write(fd, &c, 1);
+	write(file_descriptor, &character, 1);
 }

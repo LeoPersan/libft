@@ -6,19 +6,19 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:39:46 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 19:24:19 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/08 10:56:17 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *memory, int byte, t_size quantity)
 {
-	size_t			i;
+	t_size			i;
 
 	i = -1;
-	while (++i < n)
-		if (((unsigned char *) s)[i] == (unsigned char) c)
-			return ((void *) s + i);
+	while (++i < quantity)
+		if (((unsigned char *) memory)[i] == (unsigned char) byte)
+			return ((void *) memory + i);
 	return (NULL);
 }

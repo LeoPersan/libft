@@ -6,15 +6,15 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:44:40 by leoperei          #+#    #+#             */
-/*   Updated: 2021/07/28 20:44:40 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:41:26 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_toupper(int character)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	if (character >= 97 && character <= 122)
+		return (character - 32);
+	return (character);
 }

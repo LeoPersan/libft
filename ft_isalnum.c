@@ -6,15 +6,15 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:32:38 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/01 19:13:34 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:32:19 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_isalnum(int character)
 {
-	return ((c >= 65 && c <= 90)
-		|| (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57));
+	return ((character >= 65 && character <= 90)
+		|| (character >= 97 && character <= 122)
+		|| (character >= 48 && character <= 57));
 }
