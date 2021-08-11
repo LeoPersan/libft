@@ -6,7 +6,7 @@
 /*   By: leoperei <leopso1990@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 21:51:33 by leoperei          #+#    #+#             */
-/*   Updated: 2021/08/08 11:03:45 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/08/10 21:16:34 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ void	ft_putendl_fd(char *string, int file_descriptor)
 	while (*string)
 		write(file_descriptor, string++, 1);
 	write(file_descriptor, "\n", 1);
-	write(file_descriptor, "\0", 1);
 }

@@ -18,5 +18,4 @@ void	ft_putstr_fd(char *string, int file_descriptor)
 		return ;
 	while (*string)
 		write(file_descriptor, string++, 1);
-	write(file_descriptor, string, 1);
 }
